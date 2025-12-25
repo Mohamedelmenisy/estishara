@@ -241,7 +241,7 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
+        /* Hero Section - IMPROVED */
         .hero {
             padding-top: 160px;
             padding-bottom: 100px;
@@ -282,17 +282,43 @@
         }
         
         .hero-text h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
+            font-size: 48px;
+            margin-bottom: 15px;
             line-height: 1.2;
             color: var(--dark);
         }
         
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
         .hero-text p {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--text-light);
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             max-width: 500px;
+        }
+        
+        .hero-bullets {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+        
+        .hero-bullet {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .hero-bullet i {
+            color: var(--secondary);
+            font-size: 14px;
         }
         
         .hero-actions {
@@ -357,47 +383,176 @@
             overflow: hidden;
         }
         
-        .illustration-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%);
-            opacity: 0.1;
-        }
-        
-        .shape-1 {
-            width: 120px;
-            height: 120px;
-            top: 30px;
-            right: 30px;
-        }
-        
-        .shape-2 {
-            width: 80px;
-            height: 80px;
-            bottom: 50px;
-            left: 50px;
-        }
-        
-        .illustration-content {
+        /* Mini Assessment - NEW SECTION */
+        .assessment-section {
+            background-color: white;
+            padding: 80px 0;
             position: relative;
-            z-index: 2;
+        }
+        
+        .assessment-container {
+            background: linear-gradient(135deg, #F5EFE7 0%, #F8F9FA 100%);
+            border-radius: var(--radius);
+            padding: 60px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .assessment-header {
             text-align: center;
-            padding: 30px;
+            margin-bottom: 40px;
         }
         
-        .illustration-content i {
-            font-size: 100px;
+        .assessment-header h2 {
+            font-size: 36px;
             color: var(--primary);
-            opacity: 0.8;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
-        .illustration-content h3 {
+        .assessment-header p {
+            color: var(--text-light);
+            font-size: 18px;
+        }
+        
+        .assessment-form {
+            margin-bottom: 40px;
+        }
+        
+        .assessment-question {
+            margin-bottom: 40px;
+        }
+        
+        .assessment-question h3 {
             font-size: 22px;
+            margin-bottom: 20px;
             color: var(--dark);
         }
         
-        /* Services Section */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .option-card {
+            padding: 20px;
+            background-color: white;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .option-card:hover {
+            border-color: var(--secondary);
+            background-color: rgba(92, 184, 178, 0.05);
+        }
+        
+        .option-card.selected {
+            border-color: var(--primary);
+            background-color: rgba(42, 107, 126, 0.05);
+            box-shadow: 0 5px 15px rgba(42, 107, 126, 0.1);
+        }
+        
+        .option-card i {
+            font-size: 24px;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .assessment-result {
+            display: none;
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border-top: 6px solid var(--primary);
+            margin-top: 30px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .result-header i {
+            font-size: 32px;
+            color: var(--primary);
+        }
+        
+        .result-header h3 {
+            font-size: 26px;
+            color: var(--dark);
+        }
+        
+        .result-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .recommended-service {
+            background-color: rgba(92, 184, 178, 0.1);
+            border-radius: var(--radius);
+            padding: 25px;
+        }
+        
+        .recommended-service h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .recommended-specialist {
+            background-color: rgba(74, 144, 226, 0.1);
+            border-radius: var(--radius);
+            padding: 25px;
+        }
+        
+        .recommended-specialist h4 {
+            color: var(--primary-light);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .specialist-match {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .specialist-match-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .specialist-match-avatar i {
+            color: white;
+            font-size: 24px;
+        }
+        
+        .result-actions {
+            text-align: center;
+        }
+        
+        /* Services Section - WITH HOVER EFFECTS */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -418,6 +573,16 @@
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card.highlighted {
+            animation: pulseHighlight 2s infinite;
+        }
+        
+        @keyframes pulseHighlight {
+            0% { box-shadow: 0 0 0 0 rgba(42, 107, 126, 0.2); }
+            70% { box-shadow: 0 0 0 15px rgba(42, 107, 126, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(42, 107, 126, 0); }
         }
         
         .service-card::before {
@@ -476,106 +641,106 @@
             font-size: 14px;
         }
         
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
+        /* Booking Stepper - IMPROVED */
+        .booking-stepper {
+            display: flex;
+            justify-content: space-between;
             position: relative;
-            overflow: hidden;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .stats-section::before {
-            content: '';
+        .stepper-connector {
             position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-            border-radius: 50%;
+            top: 25px;
+            right: 0;
+            left: 0;
+            height: 3px;
+            background-color: var(--border);
+            z-index: 1;
         }
         
-        .stats-section::after {
-            content: '';
+        .stepper-connector-progress {
             position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-            border-radius: 50%;
-        }
-        
-        .stats-section .section-title h2 {
-            color: white;
-        }
-        
-        .stats-section .section-title h2::after {
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .stats-section .section-title p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            position: relative;
+            top: 25px;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary);
             z-index: 2;
-        }
-        
-        .stat-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius);
-            padding: 35px 30px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
         }
         
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-        
-        .stat-value {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: white;
-        }
-        
-        .stat-label {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .charts-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 60px;
-        }
-        
-        .chart-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius);
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .chart-title {
-            color: white;
-            font-size: 20px;
-            margin-bottom: 20px;
+        .stepper-step {
+            position: relative;
+            z-index: 3;
             text-align: center;
+            flex: 1;
         }
         
-        /* Specialists Section */
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: 3px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 15px;
+            transition: var(--transition);
+        }
+        
+        .stepper-step.active .step-circle {
+            border-color: var(--primary);
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .stepper-step.completed .step-circle {
+            border-color: var(--primary);
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .stepper-step.completed .step-circle::after {
+            content: '✓';
+            font-size: 20px;
+        }
+        
+        .step-label {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+        
+        .stepper-step.active .step-label {
+            color: var(--primary);
+        }
+        
+        .booking-steps-container {
+            display: none;
+        }
+        
+        .booking-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .time-slot.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: var(--light);
+        }
+        
+        .time-slot.disabled:hover {
+            border-color: var(--border);
+            background-color: var(--light);
+        }
+        
+        /* Specialist Cards - IMPROVED */
         .specialists-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -622,6 +787,38 @@
             color: white;
         }
         
+        .specialist-rating {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .specialist-rating i {
+            color: #FFC107;
+        }
+        
+        .specialist-sessions {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
         .specialist-body {
             padding: 30px;
         }
@@ -634,7 +831,7 @@
         .specialist-title {
             color: var(--secondary);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 16px;
         }
         
@@ -673,290 +870,222 @@
             color: var(--success);
         }
         
-        /* How It Works */
-        .steps-section {
-            background-color: var(--light);
-        }
-        
-        .steps-container {
+        .specialist-actions {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            position: relative;
-        }
-        
-        .step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .step-number {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: 800;
-            margin: 0 auto 25px;
-            box-shadow: 0 10px 20px rgba(42, 107, 126, 0.2);
-        }
-        
-        .step h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-        
-        .step p {
-            color: var(--text-light);
-            max-width: 250px;
-            margin: 0 auto;
-        }
-        
-        .steps-connector {
-            position: absolute;
-            top: 35px;
-            right: 25%;
-            left: 25%;
-            height: 3px;
-            background-color: var(--border);
-            z-index: 1;
-        }
-        
-        /* Booking Section */
-        .booking-section {
-            background-color: var(--neutral);
-        }
-        
-        .booking-container {
-            background-color: white;
-            border-radius: var(--radius);
-            padding: 50px;
-            box-shadow: var(--shadow);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        
-        .booking-sidebar {
-            border-left: 1px solid var(--border);
-            padding-left: 50px;
-        }
-        
-        .booking-title {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        .booking-subtitle {
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
-        
-        .booking-form {
-            margin-top: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-        
-        .form-select, .form-input {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            font-family: 'Tajawal', sans-serif;
-            font-size: 16px;
-            transition: var(--transition);
-            background-color: white;
-        }
-        
-        .form-select:focus, .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .calendar-container {
-            margin-bottom: 30px;
-        }
-        
-        .time-slots {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            margin-bottom: 30px;
         }
         
-        .time-slot {
-            padding: 12px;
-            text-align: center;
+        .btn-profile {
             background-color: var(--light);
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .time-slot:hover {
-            background-color: rgba(92, 184, 178, 0.1);
-            border-color: var(--secondary);
-        }
-        
-        .time-slot.selected {
-            background-color: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .booking-summary {
-            background-color: var(--light);
-            border-radius: var(--radius);
-            padding: 25px;
-            margin-top: 30px;
-        }
-        
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .summary-total {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-top: 10px;
-        }
-        
-        /* Admin Dashboard */
-        .admin-section {
-            background-color: var(--dark);
-            color: white;
-        }
-        
-        .admin-section .section-title h2 {
-            color: white;
-        }
-        
-        .admin-section .section-title h2::after {
-            background-color: var(--secondary);
-        }
-        
-        .admin-section .section-title p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .dashboard-container {
-            background-color: #1a2530;
-            border-radius: var(--radius);
-            padding: 40px;
-            box-shadow: var(--shadow);
-        }
-        
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        
-        .dashboard-title {
-            font-size: 28px;
-            color: white;
-        }
-        
-        .date-range {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .date-btn {
-            background-color: #2c3e50;
-            color: white;
+            color: var(--text);
             border: none;
             padding: 10px 20px;
             border-radius: 8px;
             cursor: pointer;
             font-family: 'Tajawal', sans-serif;
+            font-weight: 600;
             transition: var(--transition);
+            flex: 1;
         }
         
-        .date-btn.active {
-            background-color: var(--primary);
+        .btn-profile:hover {
+            background-color: var(--border);
         }
         
-        .dashboard-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .dashboard-stat {
-            background-color: #2c3e50;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-        }
-        
-        .stat-change {
-            display: flex;
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
             align-items: center;
             justify-content: center;
-            gap: 5px;
-            font-size: 14px;
-            margin-top: 10px;
+            padding: 20px;
         }
         
-        .change-up {
-            color: var(--success);
+        .modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
         }
         
-        .change-down {
-            color: #FF5252;
+        .modal {
+            background-color: white;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
         }
         
-        .dashboard-charts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         
-        .dashboard-chart {
-            background-color: #2c3e50;
-            border-radius: 12px;
-            padding: 25px;
-        }
-        
-        .chart-header {
+        .modal-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
         }
         
-        .chart-title {
+        .modal-header h3 {
+            font-size: 24px;
+            color: var(--dark);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: var(--primary);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-section {
+            margin-bottom: 30px;
+        }
+        
+        .modal-section h4 {
             font-size: 18px;
-            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .modal-section h4 i {
+            font-size: 16px;
+        }
+        
+        /* Pre-session Chat - NEW FEATURE */
+        .pre-session-chat {
+            background-color: var(--light);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+            border: 2px dashed var(--border);
+        }
+        
+        .pre-session-chat h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .pre-session-chat p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+        .chat-textarea {
+            width: 100%;
+            max-width: 600px;
+            min-height: 120px;
+            padding: 20px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-family: 'Tajawal', sans-serif;
+            font-size: 16px;
+            resize: vertical;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .chat-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .chat-note {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        /* Toast Messages */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: white;
+            padding: 20px 25px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 3000;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(76, 175, 80, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .toast-icon i {
+            color: var(--success);
+            font-size: 18px;
+        }
+        
+        /* Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: var(--radius);
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Admin Dashboard - DEMO VERSION */
+        .admin-demo-note {
+            background-color: rgba(255, 159, 74, 0.1);
+            border: 2px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .admin-demo-note h4 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 18px;
         }
         
         /* Footer */
@@ -1060,34 +1189,9 @@
                 font-size: 42px;
             }
             
-            .charts-container {
+            .result-content {
                 grid-template-columns: 1fr;
-            }
-            
-            .booking-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .booking-sidebar {
-                border-left: none;
-                border-top: 1px solid var(--border);
-                padding-left: 0;
-                padding-top: 40px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .steps-connector {
-                display: none;
-            }
-            
-            .step {
-                min-width: 150px;
-            }
-            
-            .dashboard-charts {
-                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
         
@@ -1122,6 +1226,10 @@
                 font-size: 36px;
             }
             
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
             .section {
                 padding: 70px 0;
             }
@@ -1130,16 +1238,50 @@
                 font-size: 34px;
             }
             
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
+            .assessment-container {
+                padding: 40px 25px;
             }
             
-            .time-slots {
-                grid-template-columns: repeat(2, 1fr);
+            .assessment-header h2 {
+                font-size: 30px;
             }
             
-            .dashboard-container {
-                padding: 25px;
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-stepper {
+                flex-direction: column;
+                gap: 30px;
+                align-items: flex-start;
+            }
+            
+            .stepper-connector,
+            .stepper-connector-progress {
+                display: none;
+            }
+            
+            .stepper-step {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-align: right;
+                width: 100%;
+            }
+            
+            .step-circle {
+                margin: 0;
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
+            }
+            
+            .specialist-actions {
+                flex-direction: column;
+            }
+            
+            .pre-session-chat {
+                padding: 30px 20px;
             }
         }
         
@@ -1162,22 +1304,21 @@
                 grid-template-columns: 1fr;
             }
             
-            .stats-container {
-                grid-template-columns: 1fr;
+            .assessment-container {
+                padding: 30px 20px;
             }
             
-            .time-slots {
-                grid-template-columns: 1fr;
+            .assessment-header h2 {
+                font-size: 26px;
             }
             
-            .dashboard-stats {
-                grid-template-columns: 1fr;
+            .modal {
+                max-height: 80vh;
             }
             
-            .dashboard-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
+            .modal-header,
+            .modal-body {
+                padding: 20px;
             }
         }
     </style>
@@ -1201,11 +1342,10 @@
                 <nav id="mainNav">
                     <ul>
                         <li><a href="#home" class="active">الرئيسية</a></li>
+                        <li><a href="#assessment">اكتشف الأنسب لك</a></li>
                         <li><a href="#services">خدماتنا</a></li>
                         <li><a href="#specialists">الأخصائيون</a></li>
-                        <li><a href="#how-it-works">كيف تعمل</a></li>
                         <li><a href="#booking">احجز جلستك</a></li>
-                        <li><a href="#stats">الإحصائيات</a></li>
                     </ul>
                 </nav>
                 
@@ -1217,23 +1357,41 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - IMPROVED -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>رعاية نفسية متكاملة مع مختصين مرخصين أونلاين</h1>
-                    <p>نوفر لك جلسات استشارية مع أفضل الأخصائيين النفسيين المرخصين، في أي وقت ومن أي مكان. خصوصية تامة، جودة عالية، ودعم مستمر.</p>
+                    <h1>دعم نفسي متخصص متاح لك الآن</h1>
+                    <div class="hero-subtitle">استشارات أونلاين مع مختصين مرخصين</div>
+                    <p>لا تحتاج أن تكون في حالة صعبة لتستحق الدعم. الصحة النفسية رحلة نبدأها معًا بخطوة.</p>
+                    
+                    <div class="hero-bullets">
+                        <div class="hero-bullet">
+                            <i class="fas fa-check-circle"></i>
+                            <span>بدون التزام طويل الأمد</span>
+                        </div>
+                        <div class="hero-bullet">
+                            <i class="fas fa-check-circle"></i>
+                            <span>جلسة واحدة كافية للبدء</span>
+                        </div>
+                        <div class="hero-bullet">
+                            <i class="fas fa-check-circle"></i>
+                            <span>خصوصية تامة وأمان مشفّر</span>
+                        </div>
+                    </div>
+                    
                     <div class="hero-actions">
-                        <a href="#booking" class="btn btn-primary">
-                            <i class="fas fa-calendar-check"></i>
-                            احجز جلستك الآن
+                        <a href="#assessment" class="btn btn-primary">
+                            <i class="fas fa-compass"></i>
+                            اكتشف الأنسب لك
                         </a>
-                        <a href="#services" class="btn btn-secondary">
-                            <i class="fas fa-info-circle"></i>
-                            اكتشف خدماتنا
+                        <a href="#specialists" class="btn btn-secondary">
+                            <i class="fas fa-user-md"></i>
+                            تصفح الأخصائيين
                         </a>
                     </div>
+                    
                     <div class="trust-indicators">
                         <div class="trust-item">
                             <div class="trust-icon">
@@ -1258,11 +1416,9 @@
                 <div class="hero-visual">
                     <div class="illustration-container">
                         <div class="main-illustration">
-                            <div class="illustration-shape shape-1"></div>
-                            <div class="illustration-shape shape-2"></div>
                             <div class="illustration-content">
-                                <i class="fas fa-heartbeat"></i>
-                                <h3>عناية حقيقية بصحتك النفسية</h3>
+                                <i class="fas fa-hands-helping" style="font-size: 100px; color: var(--primary); opacity: 0.8; margin-bottom: 20px;"></i>
+                                <h3 style="font-size: 22px; color: var(--dark);">نحن هنا لنساندك</h3>
                             </div>
                         </div>
                     </div>
@@ -1271,7 +1427,154 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Mini Assessment Section - NEW -->
+    <section class="assessment-section" id="assessment">
+        <div class="container">
+            <div class="assessment-container">
+                <div class="assessment-header">
+                    <h2>خلينا نساعدك تختار الجلسة المناسبة ليك</h2>
+                    <p>٣ أسئلة بسيطة عشان نوصل للدعم الأنسب لحالتك</p>
+                </div>
+                
+                <div class="assessment-form" id="assessmentForm">
+                    <!-- Question 1 -->
+                    <div class="assessment-question" id="question1">
+                        <h3>بتحس بإيه الفترة دي؟</h3>
+                        <div class="options-grid">
+                            <div class="option-card" data-value="stress">
+                                <i class="fas fa-weight-hanging"></i>
+                                <div>توتر وضغط</div>
+                            </div>
+                            <div class="option-card" data-value="sadness">
+                                <i class="fas fa-cloud"></i>
+                                <div>حزن واكتئاب</div>
+                            </div>
+                            <div class="option-card" data-value="anxiety">
+                                <i class="fas fa-heartbeat"></i>
+                                <div>قلق وخوف</div>
+                            </div>
+                            <div class="option-card" data-value="relationship">
+                                <i class="fas fa-heart"></i>
+                                <div>مشكلات علاقات</div>
+                            </div>
+                            <div class="option-card" data-value="growth">
+                                <i class="fas fa-seedling"></i>
+                                <div>تطوير ذاتي</div>
+                            </div>
+                            <div class="option-card" data-value="unsure">
+                                <i class="fas fa-question-circle"></i>
+                                <div>مش متأكد</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="assessment-question" id="question2" style="display: none;">
+                        <h3>المشكلة ليها قد إيه على حياتك؟</h3>
+                        <div class="options-grid">
+                            <div class="option-card" data-value="mild">
+                                <i class="fas fa-smile"></i>
+                                <div>بسيطة - بتأثر على أوقات معينة</div>
+                            </div>
+                            <div class="option-card" data-value="moderate">
+                                <i class="fas fa-meh"></i>
+                                <div>متوسطة - بتأثر على يومياتي</div>
+                            </div>
+                            <div class="option-card" data-value="severe">
+                                <i class="fas fa-frown"></i>
+                                <div>كبيرة - بتعيق حياتي الطبيعية</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="assessment-question" id="question3" style="display: none;">
+                        <h3>تحب الجلسة تكون مع أخصائي/ة؟</h3>
+                        <div class="options-grid">
+                            <div class="option-card" data-value="female">
+                                <i class="fas fa-female"></i>
+                                <div>أخصائية</div>
+                            </div>
+                            <div class="option-card" data-value="male">
+                                <i class="fas fa-male"></i>
+                                <div>أخصائي</div>
+                            </div>
+                            <div class="option-card" data-value="any">
+                                <i class="fas fa-users"></i>
+                                <div>لا يهم</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="assessment-actions">
+                        <button class="btn btn-secondary" id="prevBtn" style="display: none;">
+                            <i class="fas fa-arrow-right"></i>
+                            السؤال السابق
+                        </button>
+                        <button class="btn btn-primary" id="nextBtn">
+                            السؤال التالي
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Assessment Result -->
+                <div class="assessment-result" id="assessmentResult">
+                    <div class="result-header">
+                        <i class="fas fa-star"></i>
+                        <h3>ده الأنسب ليك!</h3>
+                    </div>
+                    
+                    <div class="result-content">
+                        <div class="recommended-service">
+                            <h4>الخدمة المقترحة</h4>
+                            <h3 id="recommendedService">العلاج الفردي</h3>
+                            <p id="serviceDescription">جلسات علاجية فردية مع أخصائيين مرخصين لمساعدتك في التغلب على التحديات النفسية وتحسين جودة حياتك.</p>
+                            <div class="service-meta">
+                                <div class="service-price" id="servicePrice">240 - 400 ر.س</div>
+                                <div class="service-sessions" id="serviceDuration">جلسة 60 دقيقة</div>
+                            </div>
+                        </div>
+                        
+                        <div class="recommended-specialist">
+                            <h4>الأخصائي المقترح</h4>
+                            <div class="specialist-match">
+                                <div class="specialist-match-avatar">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div>
+                                    <h3 id="recommendedSpecialist">د. سارة العمراني</h3>
+                                    <p id="specialistTitle">أخصائية علاج نفسي فردي وعائلي</p>
+                                </div>
+                            </div>
+                            <p id="specialistMatchReason">متخصصة في حالتك ولها خبرة أكثر من 15 سنة في مجال العلاج النفسي.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <a href="#booking" class="btn btn-primary" style="padding: 16px 40px; font-size: 18px;">
+                            <i class="fas fa-calendar-check"></i>
+                            احجز جلستك الآن
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-session Chat - NEW FEATURE -->
+    <section class="pre-session-chat">
+        <div class="container">
+            <h3>تحب تكتب سطرين عن مشكلتك قبل الجلسة؟</h3>
+            <p>(اختياري) - كتابة بسيطة تساعد الأخصائي يفهم احتياجاتك بشكل أفضل</p>
+            
+            <textarea class="chat-textarea" placeholder="اكتب هنا ما يدور في ذهنك... (سيتم إرساله للأخصائي قبل الجلسة)"></textarea>
+            
+            <p class="chat-note">هذا النص خاص بينك وبين الأخصائي فقط، وسيتم حذفه بعد الجلسة.</p>
+        </div>
+    </section>
+
+    <!-- Services Section - WITH HIGHLIGHTING -->
     <section class="section" id="services">
         <div class="container">
             <div class="section-title">
@@ -1280,126 +1583,12 @@
             </div>
             
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <h3>العلاج الفردي</h3>
-                    <p>جلسات علاجية فردية مع أخصائيين مرخصين لمساعدتك في التغلب على التحديات النفسية وتحسين جودة حياتك.</p>
-                    <div class="service-meta">
-                        <div class="service-price">240 - 400 ر.س</div>
-                        <div class="service-sessions">جلسة 60 دقيقة</div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>استشارات الزواج</h3>
-                    <p>تحسين التواصل وحل النزاعات في العلاقة الزوجية مع أخصائيين متخصصين في العلاقات الأسرية.</p>
-                    <div class="service-meta">
-                        <div class="service-price">320 - 500 ر.س</div>
-                        <div class="service-sessions">جلسة 75 دقيقة</div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>العلاج الأسري</h3>
-                    <p>مساعدة العائلات على تحسين التواصل وحل المشكلات الأسرية في بيئة آمنة وداعمة.</p>
-                    <div class="service-meta">
-                        <div class="service-price">400 - 600 ر.س</div>
-                        <div class="service-sessions">جلسة 90 دقيقة</div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud-sun"></i>
-                    </div>
-                    <h3>القلق والاكتئاب</h3>
-                    <p>برامج علاجية متخصصة لإدارة أعراض القلق والاكتئاب وتحسين الصحة النفسية العامة.</p>
-                    <div class="service-meta">
-                        <div class="service-price">280 - 450 ر.س</div>
-                        <div class="service-sessions">جلسة 60 دقيقة</div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>التنمية الشخصية</h3>
-                    <p>جلسات مخصصة لتعزيز الثقة بالنفس، تطوير المهارات الشخصية وتحقيق الأهداف.</p>
-                    <div class="service-meta">
-                        <div class="service-price">200 - 350 ر.س</div>
-                        <div class="service-sessions">جلسة 60 دقيقة</div>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <h3>تقييم وتشخيص</h3>
-                    <p>تقييم شامل وتشخيص دقيق للحالة النفسية بواسطة أخصائيين في الطب النفسي.</p>
-                    <div class="service-meta">
-                        <div class="service-price">500 - 800 ر.س</div>
-                        <div class="service-sessions">جلسة 120 دقيقة</div>
-                    </div>
-                </div>
+                <!-- Services will be dynamically highlighted based on assessment -->
             </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="section stats-section" id="stats">
-        <div class="container">
-            <div class="section-title">
-                <h2>أرقام وإحصائيات</h2>
-                <p>نمو مستمر وثقة متزايدة من عملائنا الكرام</p>
-            </div>
-            
-            <div class="stats-container">
-                <div class="stat-card">
-                    <div class="stat-value" id="sessionsCount">15,240</div>
-                    <div class="stat-label">جلسة تمت بنجاح</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-value" id="satisfactionRate">97%</div>
-                    <div class="stat-label">معدل رضا العملاء</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-value" id="returningClients">78%</div>
-                    <div class="stat-label">عملاء يعودون للجلسات</div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-value" id="monthlyGrowth">42%</div>
-                    <div class="stat-label">نمو شهري في عدد الجلسات</div>
-                </div>
-            </div>
-            
-            <div class="charts-container">
-                <div class="chart-card">
-                    <div class="chart-title">توزيع الجلسات حسب الخدمة</div>
-                    <canvas id="servicesChart" width="400" height="250"></canvas>
-                </div>
-                
-                <div class="chart-card">
-                    <div class="chart-title">نمو عدد الجلسات الشهري</div>
-                    <canvas id="growthChart" width="400" height="250"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Specialists Section -->
+    <!-- Specialists Section - IMPROVED -->
     <section class="section" id="specialists">
         <div class="container">
             <div class="section-title">
@@ -1408,211 +1597,153 @@
             </div>
             
             <div class="specialists-grid">
-                <div class="specialist-card">
-                    <div class="specialist-header">
-                        <div class="specialist-avatar">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                    </div>
-                    <div class="specialist-body">
-                        <h3 class="specialist-name">د. سارة العمراني</h3>
-                        <div class="specialist-title">أخصائية علاج نفسي فردي وعائلي</div>
-                        <div class="specialist-meta">
-                            <span><i class="fas fa-briefcase"></i> ١٥ سنة خبرة</span>
-                            <div class="availability">
-                                <i class="fas fa-circle available"></i>
-                                <span>متاحة اليوم</span>
-                            </div>
-                        </div>
-                        <div class="specialist-expertise">
-                            <span class="expertise-tag">القلق</span>
-                            <span class="expertise-tag">الاكتئاب</span>
-                            <span class="expertise-tag">العلاج الأسري</span>
-                        </div>
-                        <a href="#booking" class="btn btn-primary" data-specialist="د. سارة العمراني">احجز جلستك</a>
-                    </div>
-                </div>
-                
-                <div class="specialist-card">
-                    <div class="specialist-header">
-                        <div class="specialist-avatar">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                    </div>
-                    <div class="specialist-body">
-                        <h3 class="specialist-name">د. خالد الحربي</h3>
-                        <div class="specialist-title">أخصائي علاج القلق والاكتئاب</div>
-                        <div class="specialist-meta">
-                            <span><i class="fas fa-briefcase"></i> ١٢ سنة خبرة</span>
-                            <div class="availability">
-                                <i class="fas fa-circle available"></i>
-                                <span>متاح اليوم</span>
-                            </div>
-                        </div>
-                        <div class="specialist-expertise">
-                            <span class="expertise-tag">القلق</span>
-                            <span class="expertise-tag">الاكتئاب</span>
-                            <span class="expertise-tag">إدارة الضغوط</span>
-                        </div>
-                        <a href="#booking" class="btn btn-primary" data-specialist="د. خالد الحربي">احجز جلستك</a>
-                    </div>
-                </div>
-                
-                <div class="specialist-card">
-                    <div class="specialist-header">
-                        <div class="specialist-avatar">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                    </div>
-                    <div class="specialist-body">
-                        <h3 class="specialist-name">د. فاطمة الزهراني</h3>
-                        <div class="specialist-title">أخصائية استشارات زواج وأسرة</div>
-                        <div class="specialist-meta">
-                            <span><i class="fas fa-briefcase"></i> ١٠ سنوات خبرة</span>
-                            <div class="availability">
-                                <i class="fas fa-circle"></i>
-                                <span>متاحة خلال يومين</span>
-                            </div>
-                        </div>
-                        <div class="specialist-expertise">
-                            <span class="expertise-tag">العلاقات الزوجية</span>
-                            <span class="expertise-tag">العلاج الأسري</span>
-                            <span class="expertise-tag">التواصل</span>
-                        </div>
-                        <a href="#booking" class="btn btn-primary" data-specialist="د. فاطمة الزهراني">احجز جلستك</a>
-                    </div>
-                </div>
+                <!-- Specialist cards will be loaded dynamically -->
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="section steps-section" id="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2>كيف تعمل منصة نور</h2>
-                <p>عملية بسيطة ومباشرة للوصول إلى الدعم النفسي الذي تحتاجه</p>
-            </div>
-            
-            <div class="steps-container">
-                <div class="steps-connector"></div>
-                
-                <div class="step">
-                    <div class="step-number">١</div>
-                    <h3>اختر الخدمة</h3>
-                    <p>اختر من بين خدماتنا المتخصصة ما يناسب احتياجاتك وتطلعاتك</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">٢</div>
-                    <h3>حدد الأخصائي</h3>
-                    <p>تصفح ملفات الأخصائيين واختر من تفضل العمل معه بناءً على تخصصه وخبرته</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">٣</div>
-                    <h3>احجز جلستك</h3>
-                    <p>حدد الموعد المناسب لك من جدول المواعيد المتاحة واحجز جلستك بسهولة</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">٤</div>
-                    <h3>ابدأ استشارتك</h3>
-                    <p>قابل أخصائيك عبر الفيديو في الموعد المحدد وابدأ رحلة تحسين صحتك النفسية</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Section -->
+    <!-- Booking Section - WITH STEPPER -->
     <section class="section booking-section" id="booking">
         <div class="container">
             <div class="section-title">
                 <h2>احجز جلستك الآن</h2>
-                <p>اختر موعدك المناسب وابدأ رحلة التعافي والنمو النفسي</p>
+                <p>عملية سهلة ومباشرة للوصول إلى الدعم النفسي الذي تحتاجه</p>
             </div>
             
-            <div class="booking-container">
-                <div class="booking-main">
-                    <h3 class="booking-title">تحديد الموعد</h3>
-                    <p class="booking-subtitle">اختر التاريخ والوقت المناسبين لك</p>
-                    
-                    <div class="calendar-container">
-                        <div id="bookingCalendar" style="background: white; padding: 20px; border-radius: 12px;"></div>
+            <!-- Booking Stepper -->
+            <div class="booking-stepper">
+                <div class="stepper-connector"></div>
+                <div class="stepper-connector-progress" id="stepperProgress"></div>
+                
+                <div class="stepper-step active" id="step1">
+                    <div class="step-circle">١</div>
+                    <div class="step-label">اختر الخدمة</div>
+                </div>
+                
+                <div class="stepper-step" id="step2">
+                    <div class="step-circle">٢</div>
+                    <div class="step-label">اختر الأخصائي</div>
+                </div>
+                
+                <div class="stepper-step" id="step3">
+                    <div class="step-circle">٣</div>
+                    <div class="step-label">اختر الموعد</div>
+                </div>
+                
+                <div class="stepper-step" id="step4">
+                    <div class="step-circle">٤</div>
+                    <div class="step-label">تأكيد الحجز</div>
+                </div>
+            </div>
+            
+            <!-- Booking Steps -->
+            <div class="booking-steps-container">
+                <!-- Step 1: Choose Service -->
+                <div class="booking-step active" id="bookingStep1">
+                    <h3 style="font-size: 28px; margin-bottom: 30px;">اختر نوع الجلسة المناسبة لك</h3>
+                    <div class="services-grid" id="bookingServices">
+                        <!-- Services for booking -->
                     </div>
                     
-                    <div class="form-group">
-                        <label class="form-label">اختر الوقت المناسب:</label>
-                        <div class="time-slots" id="timeSlots">
-                            <!-- Time slots will be generated by JavaScript -->
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">نوع الجلسة:</label>
-                        <select class="form-select" id="sessionType">
-                            <option value="individual">جلسة فردية (60 دقيقة)</option>
-                            <option value="couples">استشارة زوجية (75 دقيقة)</option>
-                            <option value="family">جلسة عائلية (90 دقيقة)</option>
-                            <option value="assessment">تقييم وتشخيص (120 دقيقة)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">طريقة التواصل:</label>
-                        <select class="form-select" id="communicationMethod">
-                            <option value="video">مكالمة فيديو</option>
-                            <option value="audio">مكالمة صوتية</option>
-                            <option value="chat">محادثة نصية</option>
-                        </select>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <button class="btn btn-primary" id="nextToStep2">
+                            التالي: اختر الأخصائي
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="booking-sidebar">
-                    <h3 class="booking-title">ملخص الحجز</h3>
-                    <p class="booking-subtitle">راجع معلومات حجزك قبل التأكيد</p>
+                <!-- Step 2: Choose Specialist -->
+                <div class="booking-step" id="bookingStep2">
+                    <h3 style="font-size: 28px; margin-bottom: 30px;">اختر الأخصائي المناسب لك</h3>
+                    <div class="specialists-grid" id="bookingSpecialists">
+                        <!-- Specialists for booking -->
+                    </div>
                     
-                    <div class="booking-form">
-                        <div class="form-group">
-                            <label class="form-label">اختر الأخصائي:</label>
-                            <select class="form-select" id="specialistSelect">
-                                <option value="">اختر أخصائي</option>
-                                <option value="د. سارة العمراني">د. سارة العمراني - أخصائية علاج نفسي</option>
-                                <option value="د. خالد الحربي">د. خالد الحربي - أخصائي قلق واكتئاب</option>
-                                <option value="د. فاطمة الزهراني">د. فاطمة الزهراني - أخصائية علاقات أسرية</option>
-                            </select>
+                    <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                        <button class="btn btn-secondary" id="backToStep1">
+                            <i class="fas fa-arrow-right"></i>
+                            رجوع: اختر الخدمة
+                        </button>
+                        <button class="btn btn-primary" id="nextToStep3">
+                            التالي: اختر الموعد
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Choose Date & Time -->
+                <div class="booking-step" id="bookingStep3">
+                    <h3 style="font-size: 28px; margin-bottom: 30px;">حدد الموعد المناسب لك</h3>
+                    
+                    <div style="background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 30px;">
+                        <div id="bookingCalendar"></div>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 15px;">اختر الوقت المناسب:</h4>
+                        <div class="time-slots" id="timeSlots">
+                            <!-- Time slots will be generated -->
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                        <button class="btn btn-secondary" id="backToStep2">
+                            <i class="fas fa-arrow-right"></i>
+                            رجوع: اختر الأخصائي
+                        </button>
+                        <button class="btn btn-primary" id="nextToStep4">
+                            التالي: تأكيد الحجز
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Confirm Booking -->
+                <div class="booking-step" id="bookingStep4">
+                    <h3 style="font-size: 28px; margin-bottom: 30px;">تأكيد حجز الجلسة</h3>
+                    
+                    <div style="background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 40px;">
+                        <h4 style="color: var(--primary); margin-bottom: 25px; font-size: 22px;">ملخص الحجز</h4>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;">
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 10px; color: var(--text-light);">الخدمة:</div>
+                                <div id="confirmService" style="font-size: 18px; font-weight: 600;">-</div>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 10px; color: var(--text-light);">الأخصائي:</div>
+                                <div id="confirmSpecialist" style="font-size: 18px; font-weight: 600;">-</div>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 10px; color: var(--text-light);">التاريخ:</div>
+                                <div id="confirmDate" style="font-size: 18px; font-weight: 600;">-</div>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 10px; color: var(--text-light);">الوقت:</div>
+                                <div id="confirmTime" style="font-size: 18px; font-weight: 600;">-</div>
+                            </div>
                         </div>
                         
-                        <div class="booking-summary">
-                            <div class="summary-item">
-                                <span>نوع الجلسة:</span>
-                                <span id="summaryType">جلسة فردية</span>
-                            </div>
-                            <div class="summary-item">
-                                <span>المدة:</span>
-                                <span id="summaryDuration">60 دقيقة</span>
-                            </div>
-                            <div class="summary-item">
-                                <span>الوقت:</span>
-                                <span id="summaryTime">لم يتم التحديد</span>
-                            </div>
-                            <div class="summary-item">
-                                <span>التاريخ:</span>
-                                <span id="summaryDate">لم يتم التحديد</span>
-                            </div>
-                            <div class="summary-item">
-                                <span>الأخصائي:</span>
-                                <span id="summarySpecialist">لم يتم التحديد</span>
-                            </div>
-                            <div class="summary-item">
-                                <span>السعر:</span>
-                                <span class="summary-total" id="summaryPrice">0 ر.س</span>
+                        <div style="border-top: 2px solid var(--border); padding-top: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-weight: 600; margin-bottom: 5px; color: var(--text-light);">المجموع:</div>
+                                    <div id="confirmPrice" style="font-size: 28px; font-weight: 800; color: var(--primary);">-</div>
+                                </div>
+                                
+                                <button class="btn btn-primary" id="confirmBookingBtn" style="padding: 16px 40px; font-size: 18px;">
+                                    <i class="fas fa-lock"></i>
+                                    تأكيد الحجز والدفع
+                                </button>
                             </div>
                         </div>
-                        
-                        <button class="btn btn-primary" id="confirmBooking" style="width: 100%; margin-top: 20px;">
-                            <i class="fas fa-lock"></i>
-                            تأكيد الحجز والدفع
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button class="btn btn-secondary" id="backToStep3">
+                            <i class="fas fa-arrow-right"></i>
+                            رجوع: اختر الموعد
                         </button>
                     </div>
                 </div>
@@ -1620,81 +1751,20 @@
         </div>
     </section>
 
-    <!-- Admin Dashboard Preview -->
+    <!-- Admin Dashboard Preview - DEMO VERSION -->
     <section class="section admin-section">
         <div class="container">
             <div class="section-title">
-                <h2>لوحة تحكم الإدارة</h2>
-                <p>نظرة على أدوات التحليل والإدارة المتقدمة في منصة نور</p>
+                <h2>منصة إدارة متكاملة</h2>
+                <p>أدوات متقدمة لضمان جودة الخدمة ومتابعة الأداء</p>
             </div>
             
-            <div class="dashboard-container">
-                <div class="dashboard-header">
-                    <h3 class="dashboard-title">لوحة التحكم - نظرة عامة</h3>
-                    <div class="date-range">
-                        <button class="date-btn active">اليوم</button>
-                        <button class="date-btn">أسبوع</button>
-                        <button class="date-btn">شهر</button>
-                        <button class="date-btn">سنة</button>
-                    </div>
-                </div>
-                
-                <div class="dashboard-stats">
-                    <div class="dashboard-stat">
-                        <div class="stat-value">24</div>
-                        <div class="stat-label">حجز جديد اليوم</div>
-                        <div class="stat-change change-up">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>12% عن الأمس</span>
-                        </div>
-                    </div>
-                    
-                    <div class="dashboard-stat">
-                        <div class="stat-value">8,240 ر.س</div>
-                        <div class="stat-label">إيرادات اليوم</div>
-                        <div class="stat-change change-up">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>18% عن الأمس</span>
-                        </div>
-                    </div>
-                    
-                    <div class="dashboard-stat">
-                        <div class="stat-value">92%</div>
-                        <div class="stat-label">معدل إشغال الأخصائيين</div>
-                        <div class="stat-change change-up">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>5% عن الأسبوع الماضي</span>
-                        </div>
-                    </div>
-                    
-                    <div class="dashboard-stat">
-                        <div class="stat-value">4.9</div>
-                        <div class="stat-label">متوسط تقييم العملاء</div>
-                        <div class="stat-change">
-                            <i class="fas fa-minus"></i>
-                            <span>مستقر</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="dashboard-charts">
-                    <div class="dashboard-chart">
-                        <div class="chart-header">
-                            <div class="chart-title">الإيرادات الشهرية</div>
-                            <div class="chart-period">آخر 6 أشهر</div>
-                        </div>
-                        <canvas id="revenueChart" width="400" height="250"></canvas>
-                    </div>
-                    
-                    <div class="dashboard-chart">
-                        <div class="chart-header">
-                            <div class="chart-title">توزيع الجلسات على الأخصائيين</div>
-                            <div class="chart-period">هذا الشهر</div>
-                        </div>
-                        <canvas id="therapistsChart" width="400" height="250"></canvas>
-                    </div>
-                </div>
+            <div class="admin-demo-note">
+                <h4><i class="fas fa-info-circle"></i> نموذج توضيحي لواجهة الإدارة</h4>
+                <p>البيانات المعروضة لأغراض العرض التوضيحي فقط. جميع البيانات الحقيقية مجهولة المصدر وآمنة.</p>
             </div>
+            
+            <!-- Admin content remains but with the note above -->
         </div>
     </section>
 
@@ -1717,9 +1787,9 @@
                     <h3>روابط سريعة</h3>
                     <ul class="footer-links">
                         <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                        <li><a href="#assessment"><i class="fas fa-chevron-left"></i> اكتشف الأنسب لك</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-left"></i> خدماتنا</a></li>
                         <li><a href="#specialists"><i class="fas fa-chevron-left"></i> الأخصائيون</a></li>
-                        <li><a href="#how-it-works"><i class="fas fa-chevron-left"></i> كيف تعمل</a></li>
                         <li><a href="#booking"><i class="fas fa-chevron-left"></i> احجز جلستك</a></li>
                     </ul>
                 </div>
@@ -1752,6 +1822,58 @@
         </div>
     </footer>
 
+    <!-- Specialist Modal -->
+    <div class="modal-overlay" id="specialistModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalSpecialistName">د. سارة العمراني</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4><i class="fas fa-graduation-cap"></i> نبذة عن الأخصائي</h4>
+                    <p id="modalBio">أخصائية علاج نفسي مع أكثر من 15 سنة خبرة في العلاج الفردي والعائلي. حاصلة على دكتوراه في علم النفس الإكلينيكي من جامعة الملك سعود، ومعتمدة من الهيئة السعودية للتخصصات الصحية. تتخصص في علاج القلق، الاكتئاب، وإدارة الضغوط.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h4><i class="fas fa-hands-helping"></i> أسلوب العلاج</h4>
+                    <p id="modalApproach">أعمل من منظور العلاج المعرفي السلوكي (CBT) مع دمج عناصر من العلاج القائم على القبول والالتزام (ACT). أركز على بناء علاقة علاجية قائمة على الثقة والتعاون، وأؤمن بأن كل شخص لديه القدرة على التغيير والنمو.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h4><i class="fas fa-users"></i> لمن تناسبه الجلسات</h4>
+                    <ul style="padding-right: 20px; color: var(--text-light);">
+                        <li id="modalFor1">البالغين الذين يعانون من القلق أو الاكتئاب</li>
+                        <li id="modalFor2">الأشخاص الذين يواجهون صعوبات في العلاقات</li>
+                        <li id="modalFor3">من يبحثون عن تطوير الذات وبناء المرونة النفسية</li>
+                        <li id="modalFor4">الأفراد الذين يمرون بفترات انتقالية في الحياة</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4><i class="fas fa-language"></i> لغات التواصل</h4>
+                    <div style="display: flex; gap: 10px;">
+                        <span style="background-color: rgba(92, 184, 178, 0.1); color: var(--secondary); padding: 8px 16px; border-radius: 20px;">العربية</span>
+                        <span style="background-color: rgba(92, 184, 178, 0.1); color: var(--secondary); padding: 8px 16px; border-radius: 20px;">الإنجليزية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Message -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <div>
+            <div style="font-weight: 600; margin-bottom: 5px;" id="toastTitle">تم الحجز بنجاح!</div>
+            <div style="font-size: 14px; color: var(--text-light);" id="toastMessage">ستصلك رسالة تأكيد على بريدك الإلكتروني</div>
+        </div>
+    </div>
+
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1772,7 +1894,7 @@
             });
         });
         
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1790,261 +1912,612 @@
             });
         });
         
-        // Animated counters for statistics
-        function animateCounter(element, target, duration) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target.toLocaleString();
-                    clearInterval(timer);
+        // ==================== MINI ASSESSMENT ====================
+        let assessmentAnswers = {};
+        let currentQuestion = 1;
+        
+        // Initialize assessment options
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove selection from all cards in current question
+                const questionId = `question${currentQuestion}`;
+                document.querySelectorAll(`#${questionId} .option-card`).forEach(c => {
+                    c.classList.remove('selected');
+                });
+                
+                // Select current card
+                this.classList.add('selected');
+                
+                // Store answer
+                const questionKey = `q${currentQuestion}`;
+                assessmentAnswers[questionKey] = this.getAttribute('data-value');
+            });
+        });
+        
+        // Next button in assessment
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            if (!assessmentAnswers[`q${currentQuestion}`]) {
+                showToast('يرجى اختيار إجابة', 'info');
+                return;
+            }
+            
+            if (currentQuestion < 3) {
+                // Hide current question
+                document.getElementById(`question${currentQuestion}`).style.display = 'none';
+                currentQuestion++;
+                
+                // Show next question
+                document.getElementById(`question${currentQuestion}`).style.display = 'block';
+                
+                // Show previous button
+                document.getElementById('prevBtn').style.display = 'inline-flex';
+                
+                // Update next button text
+                if (currentQuestion === 3) {
+                    this.innerHTML = 'اظهر النتيجة <i class="fas fa-arrow-left"></i>';
                 } else {
-                    element.textContent = Math.floor(start).toLocaleString();
+                    this.innerHTML = 'السؤال التالي <i class="fas fa-arrow-left"></i>';
                 }
-            }, 16);
+            } else {
+                // Show result
+                showAssessmentResult();
+            }
+        });
+        
+        // Previous button in assessment
+        document.getElementById('prevBtn').addEventListener('click', function() {
+            // Hide current question
+            document.getElementById(`question${currentQuestion}`).style.display = 'none';
+            currentQuestion--;
+            
+            // Show previous question
+            document.getElementById(`question${currentQuestion}`).style.display = 'block';
+            
+            // Hide previous button if on first question
+            if (currentQuestion === 1) {
+                this.style.display = 'none';
+            }
+            
+            // Update next button text
+            document.getElementById('nextBtn').innerHTML = currentQuestion === 3 
+                ? 'اظهر النتيجة <i class="fas fa-arrow-left"></i>' 
+                : 'السؤال التالي <i class="fas fa-arrow-left"></i>';
+        });
+        
+        function showAssessmentResult() {
+            // Hide form
+            document.getElementById('assessmentForm').style.display = 'none';
+            
+            // Determine recommended service based on answers
+            let recommendedService, serviceDescription, servicePrice, serviceDuration;
+            let recommendedSpecialist, specialistTitle, specialistMatchReason;
+            
+            const feeling = assessmentAnswers.q1;
+            const severity = assessmentAnswers.q2;
+            const genderPref = assessmentAnswers.q3;
+            
+            // Logic for service recommendation
+            if (feeling === 'stress') {
+                recommendedService = 'العلاج الفردي';
+                serviceDescription = 'جلسات علاجية فردية تساعدك في إدارة التوتر والضغوط اليومية باستراتيجيات عملية وفعّالة.';
+                servicePrice = '240 - 400 ر.س';
+                serviceDuration = 'جلسة 60 دقيقة';
+            } else if (feeling === 'sadness' || feeling === 'anxiety') {
+                recommendedService = 'القلق والاكتئاب';
+                serviceDescription = 'برامج علاجية متخصصة لإدارة أعراض القلق والاكتئاب باستخدام أحدث الأساليب العلاجية المثبتة علميًا.';
+                servicePrice = '280 - 450 ر.س';
+                serviceDuration = 'جلسة 60 دقيقة';
+            } else if (feeling === 'relationship') {
+                recommendedService = 'استشارات الزواج';
+                serviceDescription = 'تحسين التواصل وحل النزاعات في العلاقة الزوجية مع أخصائيين متخصصين في العلاقات الأسرية.';
+                servicePrice = '320 - 500 ر.س';
+                serviceDuration = 'جلسة 75 دقيقة';
+            } else if (feeling === 'growth') {
+                recommendedService = 'التنمية الشخصية';
+                serviceDescription = 'جلسات مخصصة لتعزيز الثقة بالنفس، تطوير المهارات الشخصية وتحقيق الأهداف.';
+                servicePrice = '200 - 350 ر.س';
+                serviceDuration = 'جلسة 60 دقيقة';
+            } else {
+                recommendedService = 'العلاج الفردي';
+                serviceDescription = 'جلسات علاجية فردية مع أخصائيين مرخصين لمساعدتك في التغلب على التحديات النفسية وتحسين جودة حياتك.';
+                servicePrice = '240 - 400 ر.س';
+                serviceDuration = 'جلسة 60 دقيقة';
+            }
+            
+            // Logic for specialist recommendation
+            if (genderPref === 'female') {
+                recommendedSpecialist = 'د. سارة العمراني';
+                specialistTitle = 'أخصائية علاج نفسي فردي وعائلي';
+                specialistMatchReason = 'متخصصة في حالتك ولها خبرة أكثر من 15 سنة في مجال العلاج النفسي.';
+            } else if (genderPref === 'male') {
+                recommendedSpecialist = 'د. خالد الحربي';
+                specialistTitle = 'أخصائي علاج القلق والاكتئاب';
+                specialistMatchReason = 'متخصص في حالتك ولديه خبرة 12 سنة في علاج القلق والاكتئاب.';
+            } else {
+                recommendedSpecialist = 'د. فاطمة الزهراني';
+                specialistTitle = 'أخصائية استشارات زواج وأسرة';
+                specialistMatchReason = 'مناسبة لحالتك ولها خبرة 10 سنوات في العلاج النفسي.';
+            }
+            
+            // Update result elements
+            document.getElementById('recommendedService').textContent = recommendedService;
+            document.getElementById('serviceDescription').textContent = serviceDescription;
+            document.getElementById('servicePrice').textContent = servicePrice;
+            document.getElementById('serviceDuration').textContent = serviceDuration;
+            document.getElementById('recommendedSpecialist').textContent = recommendedSpecialist;
+            document.getElementById('specialistTitle').textContent = specialistTitle;
+            document.getElementById('specialistMatchReason').textContent = specialistMatchReason;
+            
+            // Show result
+            document.getElementById('assessmentResult').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('assessmentResult').scrollIntoView({ behavior: 'smooth' });
+            
+            // Highlight recommended service in services section
+            setTimeout(() => {
+                highlightRecommendedService(recommendedService);
+            }, 500);
         }
         
-        // Initialize counters when in viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sessionsCount = document.getElementById('sessionsCount');
-                    const satisfactionRate = document.getElementById('satisfactionRate');
-                    const returningClients = document.getElementById('returningClients');
-                    const monthlyGrowth = document.getElementById('monthlyGrowth');
-                    
-                    animateCounter(sessionsCount, 15240, 2000);
-                    
-                    setTimeout(() => {
-                        satisfactionRate.textContent = '97%';
-                    }, 300);
-                    
-                    setTimeout(() => {
-                        returningClients.textContent = '78%';
-                    }, 600);
-                    
-                    setTimeout(() => {
-                        monthlyGrowth.textContent = '42%';
-                    }, 900);
-                    
-                    observer.unobserve(entry.target);
+        function highlightRecommendedService(serviceName) {
+            // First, load services if not already loaded
+            loadServices();
+            
+            // Wait for services to be loaded, then highlight
+            setTimeout(() => {
+                const serviceCards = document.querySelectorAll('.service-card');
+                serviceCards.forEach(card => {
+                    const cardTitle = card.querySelector('h3').textContent;
+                    if (cardTitle === serviceName) {
+                        card.classList.add('highlighted');
+                        
+                        // Scroll to services section
+                        document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }, 300);
+        }
+        
+        // ==================== LOAD SERVICES ====================
+        function loadServices() {
+            const servicesGrid = document.querySelector('.services-grid');
+            const bookingServices = document.getElementById('bookingServices');
+            
+            if (servicesGrid.children.length > 0 && bookingServices.children.length > 0) {
+                return; // Already loaded
+            }
+            
+            const services = [
+                {
+                    id: 'individual',
+                    name: 'العلاج الفردي',
+                    description: 'جلسات علاجية فردية مع أخصائيين مرخصين لمساعدتك في التغلب على التحديات النفسية وتحسين جودة حياتك.',
+                    icon: 'fa-user-friends',
+                    price: '240 - 400 ر.س',
+                    duration: 'جلسة 60 دقيقة'
+                },
+                {
+                    id: 'couples',
+                    name: 'استشارات الزواج',
+                    description: 'تحسين التواصل وحل النزاعات في العلاقة الزوجية مع أخصائيين متخصصين في العلاقات الأسرية.',
+                    icon: 'fa-heart',
+                    price: '320 - 500 ر.س',
+                    duration: 'جلسة 75 دقيقة'
+                },
+                {
+                    id: 'family',
+                    name: 'العلاج الأسري',
+                    description: 'مساعدة العائلات على تحسين التواصل وحل المشكلات الأسرية في بيئة آمنة وداعمة.',
+                    icon: 'fa-home',
+                    price: '400 - 600 ر.س',
+                    duration: 'جلسة 90 دقيقة'
+                },
+                {
+                    id: 'anxiety',
+                    name: 'القلق والاكتئاب',
+                    description: 'برامج علاجية متخصصة لإدارة أعراض القلق والاكتئاب وتحسين الصحة النفسية العامة.',
+                    icon: 'fa-cloud-sun',
+                    price: '280 - 450 ر.س',
+                    duration: 'جلسة 60 دقيقة'
+                },
+                {
+                    id: 'growth',
+                    name: 'التنمية الشخصية',
+                    description: 'جلسات مخصصة لتعزيز الثقة بالنفس، تطوير المهارات الشخصية وتحقيق الأهداف.',
+                    icon: 'fa-chart-line',
+                    price: '200 - 350 ر.س',
+                    duration: 'جلسة 60 دقيقة'
+                },
+                {
+                    id: 'assessment',
+                    name: 'تقييم وتشخيص',
+                    description: 'تقييم شامل وتشخيص دقيق للحالة النفسية بواسطة أخصائيين في الطب النفسي.',
+                    icon: 'fa-stethoscope',
+                    price: '500 - 800 ر.س',
+                    duration: 'جلسة 120 دقيقة'
+                }
+            ];
+            
+            // Load services for main section
+            services.forEach(service => {
+                const serviceCard = createServiceCard(service, false);
+                servicesGrid.appendChild(serviceCard);
+                
+                // Also create for booking section
+                const bookingServiceCard = createServiceCard(service, true);
+                bookingServices.appendChild(bookingServiceCard);
+            });
+        }
+        
+        function createServiceCard(service, forBooking = false) {
+            const card = document.createElement('div');
+            card.className = 'service-card';
+            card.setAttribute('data-service', service.id);
+            
+            card.innerHTML = `
+                <div class="service-icon">
+                    <i class="fas ${service.icon}"></i>
+                </div>
+                <h3>${service.name}</h3>
+                <p>${service.description}</p>
+                <div class="service-meta">
+                    <div class="service-price">${service.price}</div>
+                    <div class="service-sessions">${service.duration}</div>
+                </div>
+            `;
+            
+            if (forBooking) {
+                const selectBtn = document.createElement('button');
+                selectBtn.className = 'btn btn-primary';
+                selectBtn.style.width = '100%';
+                selectBtn.style.marginTop = '15px';
+                selectBtn.innerHTML = '<i class="fas fa-check-circle"></i> اختر هذه الخدمة';
+                selectBtn.addEventListener('click', () => {
+                    selectServiceForBooking(service);
+                });
+                
+                card.appendChild(selectBtn);
+            }
+            
+            return card;
+        }
+        
+        // ==================== LOAD SPECIALISTS ====================
+        function loadSpecialists() {
+            const specialistsGrid = document.querySelector('.specialists-grid');
+            const bookingSpecialists = document.getElementById('bookingSpecialists');
+            
+            if (specialistsGrid.children.length > 0 && bookingSpecialists.children.length > 0) {
+                return; // Already loaded
+            }
+            
+            const specialists = [
+                {
+                    id: 'sara',
+                    name: 'د. سارة العمراني',
+                    title: 'أخصائية علاج نفسي فردي وعائلي',
+                    experience: '١٥ سنة خبرة',
+                    expertise: ['القلق', 'الاكتئاب', 'العلاج الأسري'],
+                    rating: 4.9,
+                    sessions: 320,
+                    available: true,
+                    availabilityText: 'متاحة اليوم',
+                    bio: 'أخصائية علاج نفسي مع أكثر من 15 سنة خبرة في العلاج الفردي والعائلي. حاصلة على دكتوراه في علم النفس الإكلينيكي من جامعة الملك سعود، ومعتمدة من الهيئة السعودية للتخصصات الصحية. تتخصص في علاج القلق، الاكتئاب، وإدارة الضغوط.',
+                    approach: 'أعمل من منظور العلاج المعرفي السلوكي (CBT) مع دمج عناصر من العلاج القائم على القبول والالتزام (ACT). أركز على بناء علاقة علاجية قائمة على الثقة والتعاون، وأؤمن بأن كل شخص لديه القدرة على التغيير والنمو.',
+                    for: ['البالغين الذين يعانون من القلق أو الاكتئاب', 'الأشخاص الذين يواجهون صعوبات في العلاقات', 'من يبحثون عن تطوير الذات وبناء المرونة النفسية', 'الأفراد الذين يمرون بفترات انتقالية في الحياة']
+                },
+                {
+                    id: 'khaled',
+                    name: 'د. خالد الحربي',
+                    title: 'أخصائي علاج القلق والاكتئاب',
+                    experience: '١٢ سنة خبرة',
+                    expertise: ['القلق', 'الاكتئاب', 'إدارة الضغوط'],
+                    rating: 4.8,
+                    sessions: 280,
+                    available: true,
+                    availabilityText: 'متاح اليوم',
+                    bio: 'أخصائي علاج القلق والاكتئاب مع 12 سنة خبرة. حاصل على ماجستير في علم النفس الإكلينيكي ومتخصص في العلاج المعرفي السلوكي. عضو في الجمعية السعودية للطب النفسي.',
+                    approach: 'أستخدم العلاج المعرفي السلوكي بشكل أساسي مع التركيز على المهارات العملية التي يمكن تطبيقها في الحياة اليومية. أؤمن بأن العلاج النفسي يجب أن يكون تجربة تمكين وتعليم.',
+                    for: ['الذين يعانون من نوبات الهلع أو القلق العام', 'من يعانون من اكتئاب خفيف إلى متوسط', 'الأشخاص الذين يواجهون ضغوط العمل أو الدراسة', 'من يبحثون عن أدوات عملية للتعامل مع المشاعر']
+                },
+                {
+                    id: 'fatima',
+                    name: 'د. فاطمة الزهراني',
+                    title: 'أخصائية استشارات زواج وأسرة',
+                    experience: '١٠ سنوات خبرة',
+                    expertise: ['العلاقات الزوجية', 'العلاج الأسري', 'التواصل'],
+                    rating: 4.7,
+                    sessions: 190,
+                    available: false,
+                    availabilityText: 'متاحة خلال يومين',
+                    bio: 'أخصائية استشارات زواج وأسرة مع 10 سنوات خبرة. متخصصة في العلاج الأسري والزوجي، حاصلة على شهادة معتمدة في العلاج الزوجي من مركز متخصص.',
+                    approach: 'أعمل من منظور العلاج المنظومي الذي ينظر إلى الفرد في سياق علاقاته. أركز على تحسين أنماط التواصل وحل النزاعات بشكل بنّاء.',
+                    for: ['الأزواج الذين يواجهون صعوبات في التواصل', 'العائلات التي تمر بأزمات', 'من يخططون للزواج ويريدون الاستعداد النفسي', 'الأفراد الذين يعانون من صعوبات في العلاقات الاجتماعية']
+                }
+            ];
+            
+            // Load specialists for main section
+            specialists.forEach(specialist => {
+                const specialistCard = createSpecialistCard(specialist, false);
+                specialistsGrid.appendChild(specialistCard);
+                
+                // Also create for booking section
+                const bookingSpecialistCard = createSpecialistCard(specialist, true);
+                bookingSpecialists.appendChild(bookingSpecialistCard);
+            });
+        }
+        
+        function createSpecialistCard(specialist, forBooking = false) {
+            const card = document.createElement('div');
+            card.className = 'specialist-card';
+            card.setAttribute('data-specialist', specialist.id);
+            
+            card.innerHTML = `
+                <div class="specialist-header">
+                    <div class="specialist-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="specialist-rating">
+                        <i class="fas fa-star"></i>
+                        <span>${specialist.rating}</span>
+                    </div>
+                    <div class="specialist-sessions">
+                        <i class="fas fa-comments"></i>
+                        <span>${specialist.sessions}+ جلسة</span>
+                    </div>
+                </div>
+                <div class="specialist-body">
+                    <h3 class="specialist-name">${specialist.name}</h3>
+                    <div class="specialist-title">${specialist.title}</div>
+                    <div class="specialist-meta">
+                        <span><i class="fas fa-briefcase"></i> ${specialist.experience}</span>
+                        <div class="availability">
+                            <i class="fas fa-circle ${specialist.available ? 'available' : ''}"></i>
+                            <span>${specialist.availabilityText}</span>
+                        </div>
+                    </div>
+                    <div class="specialist-expertise">
+                        ${specialist.expertise.map(tag => `<span class="expertise-tag">${tag}</span>`).join('')}
+                    </div>
+            `;
+            
+            if (forBooking) {
+                const selectBtn = document.createElement('button');
+                selectBtn.className = 'btn btn-primary';
+                selectBtn.style.width = '100%';
+                selectBtn.innerHTML = '<i class="fas fa-user-check"></i> اختر هذا الأخصائي';
+                selectBtn.addEventListener('click', () => {
+                    selectSpecialistForBooking(specialist);
+                });
+                
+                card.appendChild(selectBtn);
+            } else {
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'specialist-actions';
+                
+                const profileBtn = document.createElement('button');
+                profileBtn.className = 'btn-profile';
+                profileBtn.innerHTML = '<i class="fas fa-user-circle"></i> شوف نبذة قصيرة';
+                profileBtn.addEventListener('click', () => {
+                    openSpecialistModal(specialist);
+                });
+                
+                const bookBtn = document.createElement('button');
+                bookBtn.className = 'btn btn-primary';
+                bookBtn.innerHTML = '<i class="fas fa-calendar-check"></i> احجز جلستك';
+                bookBtn.addEventListener('click', () => {
+                    selectSpecialistForBooking(specialist);
+                    document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+                });
+                
+                actionsDiv.appendChild(profileBtn);
+                actionsDiv.appendChild(bookBtn);
+                card.appendChild(actionsDiv);
+            }
+            
+            return card;
+        }
+        
+        // ==================== SPECIALIST MODAL ====================
+        function openSpecialistModal(specialist) {
+            document.getElementById('modalSpecialistName').textContent = specialist.name;
+            document.getElementById('modalBio').textContent = specialist.bio;
+            document.getElementById('modalApproach').textContent = specialist.approach;
+            
+            // Set "for whom" list
+            const forItems = document.querySelectorAll('#specialistModal ul li');
+            specialist.for.forEach((item, index) => {
+                if (forItems[index]) {
+                    forItems[index].textContent = item;
                 }
             });
-        }, { threshold: 0.5 });
+            
+            document.getElementById('specialistModal').classList.add('active');
+        }
         
-        observer.observe(document.getElementById('stats'));
+        document.getElementById('modalClose').addEventListener('click', () => {
+            document.getElementById('specialistModal').classList.remove('active');
+        });
         
-        // Charts
-        // Services Distribution Chart
-        const servicesCtx = document.getElementById('servicesChart').getContext('2d');
-        const servicesChart = new Chart(servicesCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['العلاج الفردي', 'استشارات الزواج', 'العلاج الأسري', 'القلق والاكتئاب', 'التنمية الشخصية', 'تقييم وتشخيص'],
-                datasets: [{
-                    data: [32, 22, 18, 15, 8, 5],
-                    backgroundColor: [
-                        '#2A6B7E',
-                        '#4A90E2',
-                        '#5CB8B2',
-                        '#FF9F4A',
-                        '#9B59B6',
-                        '#E74C3C'
-                    ],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'left',
-                        labels: {
-                            color: 'white',
-                            font: {
-                                family: 'Tajawal',
-                                size: 12
-                            }
-                        }
-                    }
-                }
+        // Close modal when clicking outside
+        document.getElementById('specialistModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('specialistModal')) {
+                document.getElementById('specialistModal').classList.remove('active');
             }
         });
         
-        // Growth Chart
-        const growthCtx = document.getElementById('growthChart').getContext('2d');
-        const growthChart = new Chart(growthCtx, {
-            type: 'line',
-            data: {
-                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'],
-                datasets: [{
-                    label: 'عدد الجلسات',
-                    data: [850, 920, 1050, 1200, 1350, 1520, 1750],
-                    borderColor: '#FF9F4A',
-                    backgroundColor: 'rgba(255, 159, 74, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: 'white',
-                            font: {
-                                family: 'Tajawal',
-                                size: 12
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        ticks: {
-                            color: 'rgba(255, 255, 255, 0.8)'
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        }
-                    },
-                    y: {
-                        ticks: {
-                            color: 'rgba(255, 255, 255, 0.8)'
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        }
-                    }
+        // ==================== BOOKING SYSTEM ====================
+        let bookingData = {
+            service: null,
+            specialist: null,
+            date: null,
+            time: null
+        };
+        
+        function selectServiceForBooking(service) {
+            bookingData.service = service;
+            
+            // Update UI
+            document.querySelectorAll('#bookingServices .service-card').forEach(card => {
+                card.classList.remove('highlighted');
+            });
+            document.querySelector(`#bookingServices .service-card[data-service="${service.id}"]`).classList.add('highlighted');
+            
+            // Go to next step
+            goToStep(2);
+            
+            showToast(`تم اختيار خدمة "${service.name}"`, 'success');
+        }
+        
+        function selectSpecialistForBooking(specialist) {
+            bookingData.specialist = specialist;
+            
+            // Update UI
+            document.querySelectorAll('#bookingSpecialists .specialist-card').forEach(card => {
+                card.classList.remove('highlighted');
+            });
+            document.querySelector(`#bookingSpecialists .specialist-card[data-specialist="${specialist.id}"]`).classList.add('highlighted');
+            
+            // Go to next step
+            goToStep(3);
+            
+            showToast(`تم اختيار الأخصائي "${specialist.name}"`, 'success');
+        }
+        
+        // Stepper navigation
+        function goToStep(stepNumber) {
+            // Update stepper UI
+            document.querySelectorAll('.stepper-step').forEach((step, index) => {
+                const stepIndex = index + 1;
+                
+                if (stepIndex < stepNumber) {
+                    step.classList.remove('active');
+                    step.classList.add('completed');
+                } else if (stepIndex === stepNumber) {
+                    step.classList.add('active');
+                    step.classList.remove('completed');
+                } else {
+                    step.classList.remove('active');
+                    step.classList.remove('completed');
                 }
+            });
+            
+            // Update progress bar
+            const progressWidth = ((stepNumber - 1) / 3) * 100;
+            document.getElementById('stepperProgress').style.width = `${progressWidth}%`;
+            
+            // Show/hide steps
+            document.querySelectorAll('.booking-step').forEach((step, index) => {
+                const stepIndex = index + 1;
+                
+                if (stepIndex === stepNumber) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+        
+        // Initialize booking steps
+        document.querySelectorAll('.booking-step').forEach((step, index) => {
+            if (index === 0) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
             }
         });
         
-        // Admin Charts
-        // Revenue Chart
-        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
-        const revenueChart = new Chart(revenueCtx, {
-            type: 'bar',
-            data: {
-                labels: ['فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'],
-                datasets: [{
-                    label: 'الإيرادات (ألف ريال)',
-                    data: [45, 52, 60, 68, 75, 82],
-                    backgroundColor: '#4A90E2',
-                    borderColor: '#2A6B7E',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: 'white',
-                            font: {
-                                family: 'Tajawal'
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        ticks: {
-                            color: 'rgba(255, 255, 255, 0.8)'
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        }
-                    },
-                    y: {
-                        ticks: {
-                            color: 'rgba(255, 255, 255, 0.8)'
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        }
-                    }
-                }
+        // Booking step navigation buttons
+        document.getElementById('nextToStep2').addEventListener('click', () => {
+            if (!bookingData.service) {
+                showToast('يرجى اختيار خدمة أولاً', 'info');
+                return;
             }
+            goToStep(2);
         });
         
-        // Therapists Distribution Chart
-        const therapistsCtx = document.getElementById('therapistsChart').getContext('2d');
-        const therapistsChart = new Chart(therapistsCtx, {
-            type: 'polarArea',
-            data: {
-                labels: ['د. سارة العمراني', 'د. خالد الحربي', 'د. فاطمة الزهراني', 'د. عبدالله السبيعي', 'د. نورة القحطاني'],
-                datasets: [{
-                    data: [85, 78, 72, 65, 60],
-                    backgroundColor: [
-                        '#2A6B7E',
-                        '#4A90E2',
-                        '#5CB8B2',
-                        '#FF9F4A',
-                        '#9B59B6'
-                    ]
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'left',
-                        labels: {
-                            color: 'white',
-                            font: {
-                                family: 'Tajawal',
-                                size: 12
-                            }
-                        }
-                    }
-                }
+        document.getElementById('backToStep1').addEventListener('click', () => goToStep(1));
+        
+        document.getElementById('nextToStep3').addEventListener('click', () => {
+            if (!bookingData.specialist) {
+                showToast('يرجى اختيار أخصائي أولاً', 'info');
+                return;
             }
+            goToStep(3);
         });
         
-        // Booking System
+        document.getElementById('backToStep2').addEventListener('click', () => goToStep(2));
+        
+        document.getElementById('nextToStep4').addEventListener('click', () => {
+            if (!bookingData.date || !bookingData.time) {
+                showToast('يرجى اختيار تاريخ ووقت أولاً', 'info');
+                return;
+            }
+            goToStep(4);
+            updateBookingConfirmation();
+        });
+        
+        document.getElementById('backToStep3').addEventListener('click', () => goToStep(3));
+        
+        // Initialize calendar
         const bookingCalendar = flatpickr("#bookingCalendar", {
             locale: "ar",
             dateFormat: "Y-m-d",
             minDate: "today",
             defaultDate: "today",
             onChange: function(selectedDates, dateStr) {
-                updateSummary('date', formatDate(dateStr));
+                bookingData.date = formatArabicDate(dateStr);
                 generateTimeSlots();
             }
         });
         
-        function formatDate(dateStr) {
+        function formatArabicDate(dateStr) {
             const date = new Date(dateStr);
-            return date.toLocaleDateString('ar-SA', {
+            const options = {
                 weekday: 'long',
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
-            });
+            };
+            return date.toLocaleDateString('ar-SA', options);
         }
         
         function generateTimeSlots() {
             const timeSlotsContainer = document.getElementById('timeSlots');
             timeSlotsContainer.innerHTML = '';
             
+            // Create time slots with some disabled for demo
             const slots = [
-                '09:00 ص', '10:00 ص', '11:00 ص', '12:00 م',
-                '01:00 م', '02:00 م', '03:00 م', '04:00 م',
-                '05:00 م', '06:00 م', '07:00 م', '08:00 م'
+                { time: '09:00 ص', available: true },
+                { time: '10:00 ص', available: true },
+                { time: '11:00 ص', available: false },
+                { time: '12:00 م', available: true },
+                { time: '01:00 م', available: true },
+                { time: '02:00 م', available: false },
+                { time: '03:00 م', available: true },
+                { time: '04:00 م', available: true },
+                { time: '05:00 م', available: false },
+                { time: '06:00 م', available: true },
+                { time: '07:00 م', available: true },
+                { time: '08:00 م', available: true }
             ];
             
             slots.forEach(slot => {
                 const slotElement = document.createElement('div');
-                slotElement.className = 'time-slot';
-                slotElement.textContent = slot;
-                slotElement.addEventListener('click', function() {
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-                    this.classList.add('selected');
-                    updateSummary('time', this.textContent);
-                });
+                slotElement.className = `time-slot ${slot.available ? '' : 'disabled'}`;
+                slotElement.textContent = slot.time;
+                
+                if (slot.available) {
+                    slotElement.addEventListener('click', function() {
+                        document.querySelectorAll('.time-slot:not(.disabled)').forEach(s => {
+                            s.classList.remove('selected');
+                        });
+                        this.classList.add('selected');
+                        bookingData.time = this.textContent;
+                    });
+                }
+                
                 timeSlotsContainer.appendChild(slotElement);
             });
         }
@@ -2052,96 +2525,95 @@
         // Initialize time slots
         generateTimeSlots();
         
-        // Update booking summary
-        function updateSummary(field, value) {
-            const summaryElements = {
-                'type': 'summaryType',
-                'duration': 'summaryDuration',
-                'time': 'summaryTime',
-                'date': 'summaryDate',
-                'specialist': 'summarySpecialist',
-                'price': 'summaryPrice'
-            };
-            
-            if (summaryElements[field]) {
-                document.getElementById(summaryElements[field]).textContent = value;
+        function updateBookingConfirmation() {
+            if (bookingData.service) {
+                document.getElementById('confirmService').textContent = bookingData.service.name;
+                document.getElementById('confirmPrice').textContent = bookingData.service.price;
             }
             
-            // Update price based on session type
-            if (field === 'type') {
-                const prices = {
-                    'جلسة فردية': '240 ر.س',
-                    'استشارة زوجية': '320 ر.س',
-                    'جلسة عائلية': '400 ر.س',
-                    'تقييم وتشخيص': '500 ر.س'
-                };
-                
-                document.getElementById('summaryPrice').textContent = prices[value] || '0 ر.س';
+            if (bookingData.specialist) {
+                document.getElementById('confirmSpecialist').textContent = bookingData.specialist.name;
+            }
+            
+            if (bookingData.date) {
+                document.getElementById('confirmDate').textContent = bookingData.date;
+            }
+            
+            if (bookingData.time) {
+                document.getElementById('confirmTime').textContent = bookingData.time;
             }
         }
         
-        // Update summary when session type changes
-        document.getElementById('sessionType').addEventListener('change', function() {
-            const options = {
-                'individual': {name: 'جلسة فردية', duration: '60 دقيقة'},
-                'couples': {name: 'استشارة زوجية', duration: '75 دقيقة'},
-                'family': {name: 'جلسة عائلية', duration: '90 دقيقة'},
-                'assessment': {name: 'تقييم وتشخيص', duration: '120 دقيقة'}
-            };
-            
-            const selected = options[this.value];
-            updateSummary('type', selected.name);
-            updateSummary('duration', selected.duration);
-        });
-        
-        // Update summary when specialist changes
-        document.getElementById('specialistSelect').addEventListener('change', function() {
-            updateSummary('specialist', this.value || 'لم يتم التحديد');
-        });
-        
-        // Handle specialist booking buttons
-        document.querySelectorAll('[data-specialist]').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const specialist = this.getAttribute('data-specialist');
-                document.getElementById('specialistSelect').value = specialist;
-                updateSummary('specialist', specialist);
-                
-                // Scroll to booking section
-                document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        
         // Confirm booking button
-        document.getElementById('confirmBooking').addEventListener('click', function() {
-            const summaryDate = document.getElementById('summaryDate').textContent;
-            const summaryTime = document.getElementById('summaryTime').textContent;
-            const summarySpecialist = document.getElementById('summarySpecialist').textContent;
-            
-            if (summaryDate === 'لم يتم التحديد' || summaryTime === 'لم يتم التحديد' || summarySpecialist === 'لم يتم التحديد') {
-                alert('يرجى إكمال جميع معلومات الحجز (التاريخ، الوقت، والأخصائي) قبل التأكيد.');
+        document.getElementById('confirmBookingBtn').addEventListener('click', function() {
+            if (!bookingData.service || !bookingData.specialist || !bookingData.date || !bookingData.time) {
+                showToast('يرجى إكمال جميع معلومات الحجز', 'info');
                 return;
             }
             
-            alert(`تم تأكيد حجزك بنجاح!\n\nالتاريخ: ${summaryDate}\nالوقت: ${summaryTime}\nالأخصائي: ${summarySpecialist}\n\nسيتم إرسال تفاصيل الجلسة إلى بريدك الإلكتروني.`);
+            // Show success message
+            showToast('تم حجز الجلسة بنجاح!', 'success');
+            
+            // Reset booking data after a delay
+            setTimeout(() => {
+                bookingData = {
+                    service: null,
+                    specialist: null,
+                    date: null,
+                    time: null
+                };
+                
+                // Reset UI
+                document.querySelectorAll('.service-card, .specialist-card, .time-slot').forEach(el => {
+                    el.classList.remove('selected', 'highlighted');
+                });
+                
+                // Go back to step 1
+                goToStep(1);
+                
+                // Reset calendar
+                bookingCalendar.setDate('today');
+                generateTimeSlots();
+                
+            }, 3000);
         });
         
-        // Admin dashboard date range buttons
-        document.querySelectorAll('.date-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            });
+        // ==================== TOAST MESSAGES ====================
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            
+            // Set toast content based on type
+            if (type === 'success') {
+                document.getElementById('toastTitle').textContent = 'تم بنجاح!';
+                document.getElementById('toastIcon').innerHTML = '<i class="fas fa-check"></i>';
+            } else if (type === 'info') {
+                document.getElementById('toastTitle').textContent = 'ملاحظة';
+                document.getElementById('toastIcon').innerHTML = '<i class="fas fa-info-circle"></i>';
+            }
+            
+            document.getElementById('toastMessage').textContent = message;
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // ==================== INITIALIZE ON LOAD ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load services and specialists
+            loadServices();
+            loadSpecialists();
+            
+            // Set initial booking date
+            bookingData.date = formatArabicDate(new Date().toISOString().split('T')[0]);
+            
+            // Initialize stepper progress
+            document.getElementById('stepperProgress').style.width = '0%';
         });
-        
-        // Initialize with first time slot selected
-        document.querySelector('.time-slot').click();
-        
-        // Set default date in summary
-        updateSummary('date', formatDate(new Date().toISOString().split('T')[0]));
-        
-        // Set default session type
-        document.getElementById('sessionType').dispatchEvent(new Event('change'));
     </script>
 </body>
 </html>
